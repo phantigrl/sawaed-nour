@@ -1,0 +1,43 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% block title %}Apply | تقديم{% endblock %}
+
+{% block content %}
+<section style="padding: 100px 20px; max-width: 1000px; margin: auto;">
+  <h2 style="text-align: center; color: var(--dark-green); font-family: 'Playfair Display', serif; font-size: 2.8rem;">
+    Apply to Sawaeid | التقديم إلى سواعد
+  </h2>
+  <p style="text-align: center; font-family: 'Cairo', sans-serif; font-size: 1.3rem; color: #456244;">
+    Join our hospitality team by reviewing the requirements below | انضم إلى فريق الضيافة لدينا عبر قراءة المتطلبات أدناه
+  </p>
+
+  <div style="margin-top: 60px;">
+    <h3 style="color: var(--dark-green); font-size: 1.6rem; text-align: center;">Requirements | المتطلبات</h3>
+    <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-between; margin-top: 30px;">
+      <!-- English -->
+      <ul style="flex: 1; min-width: 300px; list-style: disc; font-family: 'Cairo', sans-serif; font-size: 1rem; line-height: 2;">
+        <li>Updated CV / Resume</li>
+        <li>Minimum 1 year of experience in your field</li>
+        <li>Commitment to work ethic and professionalism</li>
+        <li>Ability to work in hospitality environments (hotels, restaurants, events)</li>
+        <li>Copy of national ID</li>
+      </ul>
+      <!-- Arabic -->
+      <ul style="flex: 1; min-width: 300px; list-style: disc; font-family: 'Cairo', sans-serif; font-size: 1rem; line-height: 2; direction: rtl; text-align: right;">
+        <li>سيرة ذاتية محدثة</li>
+        <li>سنة خبرة على الأقل في مجالك</li>
+        <li>الالتزام والانضباط المهني</li>
+        <li>القدرة على العمل في بيئة الضيافة (فنادق، مطاعم، مناسبات)</li>
+        <li>نسخة من بطاقة الهوية الوطنية</li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin: 50px 0;">
+    <a href="{% url 'apply_form' %}" style="padding: 14px 30px; font-size: 1rem; background: var(--clear-green); color: white; border-radius: 10px; text-decoration: none; font-family: 'Cairo', sans-serif;">
+      Proceed to Application | الانتقال إلى نموذج التقديم
+    </a>
+  </div>
+</section>
+{% endblock %}

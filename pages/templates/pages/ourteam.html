@@ -1,0 +1,80 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% block title %}Our Team | سواعد SAWAEID{% endblock %}
+
+{% block content %}
+<section class="hero container fade-in" style="padding: 100px 20px; text-align: center;">
+  <div style="max-width: 950px; margin: 0 auto;">
+    <h1 class="floating-title" style="font-size: 3.2rem; font-family: 'Playfair Display', serif; color: var(--dark-green); margin-bottom: 30px; animation: floatUp 2s ease-in-out;">
+      <span style="display: block; color: var(--clear-green);">Our Team</span>
+      <span style="display: block; direction: rtl; color: var(--dark-green); font-family: 'Cairo', sans-serif;">تعرف على فريقنا</span>
+    </h1>
+
+    <div style="background-color: var(--light-grey); padding: 30px 40px; border-radius: 16px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); animation: fadeIn 2s ease-in-out;">
+      <p style="font-size: 1.3rem; font-weight: 600; color: var(--text); line-height: 2; margin-bottom: 16px;">
+        ✨ We are a passionate and experienced team, crafting premium hospitality experiences with Saudi excellence and global standards.
+      </p>
+      <p style="font-size: 1.3rem; font-weight: 600; color: var(--text); line-height: 2; direction: rtl; text-align: right;">
+        ✨ نحن فريق شغوف وذو خبرة، نبتكر تجارب ضيافة فاخرة مستوحاة من التميز السعودي والمواصفات العالمية.
+      </p>
+    </div>
+
+    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; margin-top: 50px;">
+      <a href="{% url 'chairman' %}" class="btn hover-zoom" style="
+        padding: 14px 30px;
+        background-color: var(--clear-green);
+        color: white;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        text-decoration: none;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+      "><span style="margin-right: 6px;">👨‍💼</span> Chairman of the Board</a>
+
+      <a href="{% url 'our_team_detail' %}" class="btn hover-zoom" style="
+        padding: 14px 30px;
+        background-color: var(--clear-green);
+        color: white;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        text-decoration: none;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+      "><span style="margin-right: 6px;">👥</span> Meet the Team</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hover-zoom:hover {
+    background-color: var(--dark-green) !important;
+    transform: scale(1.05);
+  }
+
+  @keyframes floatUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @media (max-width: 768px) {
+    .hero.container {
+      padding: 60px 15px;
+    }
+    .btn {
+      padding: 12px 24px;
+      font-size: 1rem;
+    }
+    h1 {
+      font-size: 2.2rem !important;
+    }
+  }
+</style>
+{% endblock %}

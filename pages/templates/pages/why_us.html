@@ -1,0 +1,206 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% block title %}Why Us | لماذا نحن{% endblock %}
+
+{% block content %}
+<!-- BACKGROUND PARTICLES -->
+<div id="particles-js" style="position: absolute; width: 100%; height: 100%; z-index: -1;"></div>
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script>
+  particlesJS("particles-js", {
+    particles: {
+      number: { value: 50, density: { enable: true, value_area: 800 } },
+      color: { value: ["#d1e0cf", "#b0cfae", "#91b88e"] },
+      shape: { type: "circle" },
+      opacity: { value: 0.4, random: true },
+      size: { value: 4, random: true },
+      move: { enable: true, speed: 1 }
+    },
+    interactivity: {
+      detect_on: "canvas",
+      events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" } },
+      modes: { repulse: { distance: 100 }, push: { particles_nb: 4 } }
+    },
+    retina_detect: true
+  });
+</script>
+
+<!-- SVG WAVE BACKGROUND -->
+<svg style="position:absolute; top:0; left:0; width:100%; height:200px; z-index:-1;" viewBox="0 0 1440 320">
+  <path fill="#d6e8d2" fill-opacity="1" d="M0,64L80,101.3C160,139,320,213,480,218.7C640,224,800,160,960,160C1120,160,1280,224,1360,256L1440,288L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z" />
+</svg>
+
+<!-- CALLIGRAPHY DECORATION -->
+<div style="position:absolute; top:20px; right:20px; z-index:1;">
+  <div style="width: 160px; height: 160px; background: radial-gradient(circle, rgba(180,220,190,0.35), transparent 70%);
+              border-radius: 50%; position: absolute; top: 0; right: 0; z-index: -1;"></div>
+  <img src="{% static 'pages/images/calligraphy-deco.svg' %}" alt="Arabic Calligraphy Decoration"
+       style="width: 120px; opacity: 0.8; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.1));">
+</div>
+
+<!-- WHY US SECTION -->
+<section class="why-us-section gradient-temp-bg" style="position: relative; padding: 120px 20px; overflow: hidden;">
+  <div class="container" style="max-width: 1200px; margin: auto;">
+    <h2 class="section-title gradient-text" style="text-align: center; font-size: 3.2rem; margin-bottom: 20px; color: var(--dark-green); font-family: 'Playfair Display', serif;" data-aos="fade-down">
+      Why Us
+    </h2>
+    <p style="text-align: center; font-size: 1.5rem; font-weight: 500; font-family: 'Cairo', sans-serif; color: #456244; margin-bottom: 60px;" data-aos="fade-up">
+      لماذا نحن
+    </p>
+
+    <div class="card-wrapper">
+      {% for item in features %}
+      <div class="flip-card {% if forloop.counter == 1 or forloop.counter == 3 %}flip-left{% endif %}" data-aos="zoom-in">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">{{ item.title }}</h3>
+            <h4 style="font-size: 1rem;">{{ item.title_ar }}</h4>
+          </div>
+          <div class="flip-card-back">
+            <p style="font-size: 0.8rem; line-height: 1.4; padding: 0 8px;">{{ item.desc }}</p>
+            <p class="ar" style="font-size: 0.8rem; line-height: 1.4; padding: 0 8px;">{{ item.desc_ar }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- VISUAL IDENTITY SECTION -->
+    <div style="margin-top: 100px; text-align: center;">
+      <h3 style="font-size: 2rem; font-family: 'Playfair Display', serif; color: var(--dark-green);">
+        Our Visual Identity
+      </h3>
+      <p style="font-family: 'Cairo', sans-serif; color: #456244;">
+        A glimpse into our brand across real-life applications | لمحة عن هويتنا في الواقع
+      </p>
+      <div class="scroll-gallery" id="scrollGallery">
+        {% for img in gallery_images %}
+        <img src="{% static 'pages/images/' %}{{ img }}" alt="Branded Item" class="brand-img-scroll">
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AOS ANIMATION -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+</script>
+
+<script>
+  const scrollGallery = document.getElementById("scrollGallery");
+  const clone = scrollGallery.innerHTML;
+  scrollGallery.innerHTML += clone;
+
+  let scrollSpeed = 1.2;
+  let scrollPos = 0;
+
+  function autoScroll() {
+    scrollPos += scrollSpeed;
+    scrollGallery.scrollLeft = scrollPos;
+
+    if (scrollPos >= scrollGallery.scrollWidth / 2) {
+      scrollPos = 0;
+    }
+
+    requestAnimationFrame(autoScroll);
+  }
+
+  requestAnimationFrame(autoScroll);
+</script>
+
+<style>
+  .card-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 60px;
+    column-gap: 60px;
+    margin-top: 40px;
+  }
+
+  .flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 260px;
+    perspective: 1000px;
+    overflow: visible;
+  }
+
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+    transform-origin: center;
+  }
+
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card.flip-left:hover .flip-card-inner {
+    transform: rotateY(-180deg);
+  }
+
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    padding: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    background: #ffffffcc;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
+  .flip-card-front {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--dark-green);
+  }
+
+  .flip-card-back {
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--clear-green);
+    color: white;
+  }
+
+  .flip-card-back .ar {
+    margin-top: 10px;
+    font-family: 'Cairo', sans-serif;
+  }
+
+  .scroll-gallery {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    gap: 30px;
+    padding: 20px 0;
+  }
+
+  .brand-img-scroll {
+    height: 200px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .brand-img-scroll:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+  }
+</style>
+{% endblock %}

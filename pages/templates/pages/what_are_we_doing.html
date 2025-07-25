@@ -1,0 +1,208 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% block title %}سواعد SAWAEID | ماذا نفعل؟{% endblock %}
+
+{% block content %}
+<!-- AOS Animation Library -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<section class="what-we-do-page fade-in">
+  <!-- Background -->
+  <div class="animated-bg"></div>
+
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">
+      <h1 class="title-ar">ماذا نفعل؟</h1>
+      <h1 class="title-en">What Are We Doing</h1>
+    </div>
+
+    <div class="intro-text" data-aos="fade-in">
+      <p dir="rtl">
+        في <strong>سواعد</strong>، نؤمن بأن نجاح أي منشأة فندقية يبدأ من كفاءة طاقمها. نحن نعمل على توفير عمالة فندقية مدربة، وخدمات تدريب احترافية، وحلول مرنة تغطي كل احتياجات القطاع الفندقي بكفاءة وجودة عالية.
+      </p>
+      <p>
+        At <strong>Sawaeid</strong>, we believe the success of any hospitality business starts with capable staff. We provide professional hotel labor, training programs, and flexible solutions that fully support the needs of the hospitality industry with quality and excellence.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-box" data-aos="zoom-in" data-aos-delay="100">
+        <img src="{% static 'pages/images/hotel_staff.jpg' %}" alt="Trained Hotel Staff">
+        <div class="service-content">
+          <p dir="rtl">نحن نقدم العمالة الفندقية المدربة في جميع الأقسام، والتي تسهم في نجاح الفندق، مع التركيز القوي على الجودة والاحترافية في تقديم الخدمات.</p>
+          <p>We provide trained hotel staff across all departments that contribute to the success of the hotel, with a strong focus on quality and professionalism in service delivery.</p>
+        </div>
+      </div>
+
+      <div class="service-box" data-aos="zoom-in" data-aos-delay="200">
+        <img src="{% static 'pages/images/staff_training.jpg' %}" alt="Employee Training">
+        <div class="service-content">
+          <p dir="rtl">نحن نقدم برامج تدريب وتطوير الموظفين لتزويدهم بالمهارات اللازمة وفقًا لأحدث المعايير في قطاع الضيافة.</p>
+          <p>We offer training programs to equip our employees with the necessary skills, in line with the latest standards in the hospitality industry.</p>
+        </div>
+      </div>
+
+      <div class="service-box" data-aos="zoom-in" data-aos-delay="300">
+        <img src="{% static 'pages/images/department_labor.jpg' %}" alt="Departmental Labor">
+        <div class="service-content">
+          <p dir="rtl">نقدم عمالة مدربة في جميع أقسام الفندق، يتم تخصيصها لتلبية احتياجات العملاء سواء في إدارة الغرف أو الاستقبال أو تقديم الطعام.</p>
+          <p>We supply trained labor across all hotel departments, tailored to meet client needs, whether in room management, reception, or food service.</p>
+        </div>
+      </div>
+
+      <div class="service-box" data-aos="zoom-in" data-aos-delay="400">
+        <img src="{% static 'pages/images/seasonal_solutions.jpg' %}" alt="Seasonal Labor">
+        <div class="service-content">
+          <p dir="rtl">نقدم حلولًا مرنة للعمالة الموسمية للمناسبات الخاصة مثل موسم الحج أو الفعاليات الكبرى، مما يساعد الفنادق على تلبية الطلب المرتفع خلال فترات الذروة.</p>
+          <p>We offer seasonal labor solutions for special occasions such as the Hajj season or major events, helping hotels meet high demand during peak periods.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="button-wrapper" data-aos="fade-up" data-aos-delay="500">
+      <a href="{% url 'home' %}" class="card-button">⬅ العودة | Back to Homepage</a>
+    </div>
+  </div>
+</section>
+
+<!-- AOS Init -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    AOS.init();
+  });
+</script>
+
+<!-- CSS Styling -->
+<style>
+  :root {
+    --dark-green: #1a3a2e;
+    --clear-green: #8a9b6e;
+    --white: #ffffff;
+    --beige: #fdfdfc;
+    --text: #333;
+    --grey: #444;
+  }
+
+  .what-we-do-page {
+    position: relative;
+    background: var(--beige);
+    padding: 100px 20px 60px;
+    color: var(--text);
+    font-family: 'Cairo', sans-serif;
+  }
+
+  .animated-bg {
+    position: absolute;
+    inset: 0;
+    background: url('{% static "pages/images/teamwork.jpg" %}') center/cover no-repeat;
+    filter: brightness(0.4) blur(2px);
+    z-index: -1;
+    animation: pulse 12s ease-in-out infinite alternate;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
+  }
+
+  .section-title {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .title-ar {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--dark-green);
+  }
+
+  .title-en {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--clear-green);
+  }
+
+  .intro-text {
+    background: #f9f6f2;
+    padding: 30px;
+    border-left: 6px solid var(--clear-green);
+    border-radius: 10px;
+    margin-bottom: 50px;
+    text-align: center;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: var(--dark-green);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .service-box {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  .service-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+  }
+
+  .service-box img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+
+  .service-content {
+    padding: 20px;
+    color: var(--grey);
+    font-size: 1.05rem;
+  }
+
+  .card-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--clear-green);
+    color: var(--white);
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .card-button:hover {
+    background-color: var(--dark-green);
+    transform: scale(1.05);
+  }
+
+  .button-wrapper {
+    text-align: center;
+    margin-top: 60px;
+  }
+
+  .fade-in {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+{% endblock %}

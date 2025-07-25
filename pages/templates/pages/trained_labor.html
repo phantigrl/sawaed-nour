@@ -1,0 +1,40 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% block title %}Trained & Qualified Labor | عمالة مدربة ومؤهلة{% endblock %}
+
+{% block content %}
+<section style="padding: 100px 20px;">
+  <div class="container" style="max-width: 1000px; margin: auto;">
+    <h1 class="gradient-text" style="text-align: center; color: var(--dark-green); font-size: 3rem;">Trained & Qualified Labor</h1>
+    <h2 style="text-align: center; color: var(--clear-green); font-family: 'Cairo', sans-serif;">عمالة مدربة ومؤهلة</h2>
+
+    <p style="margin-top: 40px; font-size: 1.1rem; color: #333; line-height: 1.8;">
+      Our staff undergo rigorous training to meet the highest hospitality standards, ensuring they are fully prepared to meet the expectations of both clients and guests.
+    </p>
+    <p style="margin-top: 10px; font-size: 1.1rem; font-family: 'Cairo', sans-serif; color: #444;">
+      يخضع موظفونا لتدريب صارم لتلبية أعلى معايير الضيافة، مما يضمن استعدادهم التام لتلبية توقعات العملاء والضيوف على حد سواء.
+    </p>
+
+    <div class="feature-list" style="margin-top: 40px;">
+      <ul style="list-style: none; padding-left: 0; font-size: 1rem; color: #2e5a3a;">
+        <li>✅ Hygiene and Safety Protocols</li>
+        <li>✅ Professional Etiquette</li>
+        <li>✅ Continuous On-the-job Training</li>
+      </ul>
+    </div>
+
+    <blockquote style="margin-top: 40px; background: #f4f9f2; padding: 20px 30px; border-left: 6px solid var(--dark-green); font-style: italic;">
+      "Excellence starts with preparation — our team is our pride."
+      <br>
+      <span style="font-family: 'Cairo', sans-serif; font-style: normal; color: #67895c;">"التميز يبدأ بالتحضير - فريقنا هو فخرنا."</span>
+    </blockquote>
+
+    <div style="text-align: center; margin-top: 60px;">
+      <a href="{% url 'why_us' %}" class="btn grow-hover" style="padding: 12px 32px; background: var(--clear-green); color: white; border-radius: 30px;">
+        ← Back to Why Us
+      </a>
+    </div>
+  </div>
+</section>
+{% endblock %}

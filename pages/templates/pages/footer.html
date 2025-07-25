@@ -1,0 +1,81 @@
+{% load static %}
+
+<footer class="footer" style="
+  background: linear-gradient(145deg, rgba(10, 35, 28, 0.8), rgba(20, 60, 48, 0.85));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ecf1ee;
+  padding: 24px 16px 8px;
+  font-family: 'Montserrat', sans-serif;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 -10px 40px rgba(0,0,0,0.15);
+">
+
+  <div class="container" style="max-width: 1150px; margin: auto;">
+
+    <!-- 📞 Contact Info -->
+    <div style="text-align: center; margin-bottom: 16px;">
+      <p style="margin: 4px 0; font-size: 1rem;">📞 +966 50 450 4283 &nbsp;|&nbsp; 📧 sawaeidhospitality@gmail.com</p>
+      <p style="margin: 4px 0; font-size: 1rem;">📍 Makkah, 24232, Saudi Arabia</p>
+    </div>
+
+    <!-- 🔗 Links Section -->
+    <div style="
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px;
+      text-align: center;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    ">
+      <div>
+        <h4 style="color: #bfe7d6; margin-bottom: 6px;">About</h4>
+        <p><a href="{% url 'home' %}">Home</a></p>
+        <p><a href="{% url 'page1' %}">Introduction</a></p>
+        <p><a href="{% url 'ourteam' %}">Our Team</a></p>
+        <p><a href="{% url 'chairman' %}">Chairman</a></p>
+        <p><a href="{% url 'our_team_detail' %}">Team Details</a></p>
+      </div>
+
+      <div>
+        <h4 style="color: #bfe7d6; margin-bottom: 6px;">What We Do</h4>
+        <p><a href="{% url 'why_us' %}">Why Us</a></p>
+        <p><a href="{% url 'what-are-we-doing' %}">What Are We Doing</a></p>
+        <p><a href="{% url 'vision_mission' %}">Vision & Mission</a></p>
+        <p><a href="{% url 'our_aims' %}">Our Aims</a></p>
+      </div>
+
+      <div>
+        <h4 style="color: #bfe7d6; margin-bottom: 6px;">Services</h4>
+        <p><a href="{% url 'services' %}">All Services</a></p>
+        <p><a href="{% url 'room_service' %}">Room Service</a></p>
+        <p><a href="{% url 'reception' %}">Reception</a></p>
+        <p><a href="{% url 'maintenance' %}">Maintenance</a></p>
+        <p><a href="{% url 'food_beverage' %}">Food & Beverage</a></p>
+        <p><a href="{% url 'seasonal_labor' %}">Seasonal Labor</a></p>
+      </div>
+
+      <div>
+        <h4 style="color: #bfe7d6; margin-bottom: 6px;">Projects</h4>
+        <p><a href="{% url 'our_projects' %}">Our Projects</a></p>
+        <p><a href="{% url 'project_case_study' %}">Project Case Study</a></p>
+        <p><a href="{% url 'contact' %}" style="color: #bfe7d6; font-weight: 600;">📬 Contact Us</a></p>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <hr style="margin: 20px auto 10px; border: none; border-top: 1px solid rgba(255,255,255,0.1); width: 50%;" />
+
+    <!-- Footer Bottom with QR Code -->
+    <div style="text-align: center; font-size: 0.85rem; color: #d3e0db; margin-top: 10px;">
+      <div style="display: flex; align-items: center; justify-content: center; gap: 12px;">
+        <img src="{% static 'pages/images/qr_license.png' %}" alt="QR Code"
+             style="width: 70px; mix-blend-mode: multiply; filter: contrast(110%) brightness(110%); border-radius: 4px;" />
+        <div>
+          <p style="margin: 0;">&copy; 2025 <strong>سواعد SAWAEID</strong>. All rights reserved.</p>
+          <p style="margin: 2px 0;">السجل التجاري: <strong>4030474104</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

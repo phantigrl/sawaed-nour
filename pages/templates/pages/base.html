@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="سواعد SAWAEID Official Website" />
+  <meta name="keywords" content="SAWAEID, سواعد, Services, Team, Projects" />
+  <meta name="author" content="SAWAEID Team" />
+  <title>{% block title %}سواعد SAWAEID{% endblock %}</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="{% static 'pages/css/custom_page.css' %}">
+  <link rel="icon" type="image/png" href="{% static 'pages/images/favicon.png' %}">
+</head>
+<body>
+
+  <!-- 🌿 HEADER with Phthalo texture -->
+  <header class="site-header" style="
+    background-image: linear-gradient(135deg, #0c2f26, #165f4b, #123d33), url('{% static 'pages/images/phthalo_texture.png' %}');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: soft-light;
+    padding: 30px0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    ">
+    <div class="container header-flex" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+      <a href="{% url 'home' %}">
+        <img src="{% static 'pages/images/Sawaed.jpg' %}" alt="سواعد SAWAEID Logo" style="width: 350px;  border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
+      </a>
+      <nav class="main-nav" style="display: flex; gap: 30px; flex-wrap: wrap;">
+        <a href="{% url 'home' %}" class="{% if request.path == '/' %}active{% endif %}" style="color: #e8e1d5;">Home</a>
+        <a href="{% url 'why_us' %}" class="{% if request.path == '/why_us/' %}active{% endif %}" style="color: #e8e1d5;">Why Us</a>
+        <a href="{% url 'what-are-we-doing' %}" class="{% if request.path == '/what_are_we_doing/' %}active{% endif %}" style="color: #e8e1d5;">What We Do</a>
+        <a href="{% url 'vision_mission' %}" class="{% if request.path == '/vission_mission/' %}active{% endif %}" style="color: #e8e1d5;">Vision & Message</a>
+        <a href="{% url 'our_projects' %}" class="{% if request.path == '/our_projects/' %}active{% endif %}" style="color: #e8e1d5;">Our Projects</a>
+        <a href="{% url 'ourteam' %}" class="{% if request.path == '/ourteam/' %}active{% endif %}" style="color: #e8e1d5;">Our Team</a>
+        <a href="{% url 'services' %}" class="{% if request.path == '/services/' %}active{% endif %}" style="color: #e8e1d5;">Services</a>
+        <a href="{% url 'contact' %}" class="{% if request.path == '/services/' %}active{% endif %}" style="color: #e8e1d5;">Contact Us</a>
+        <a href="{% url 'apply' %}" class="{% if request.path == '/services/' %}active{% endif %}" style="color: #e8e1d5;">Apply</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- FOOTER -->
+  {% include 'pages/footer.html' %}
+</body>
+</html>

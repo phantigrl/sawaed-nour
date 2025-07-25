@@ -1,0 +1,186 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% block title %}Our Team | سواعد SAWAEID{% endblock %}
+
+{% block content %}
+<section style="background-color: var(--beige); padding: 80px 20px;">
+  <div class="container" style="max-width: 1300px; margin: auto;">
+
+    <!-- Section Title -->
+    <div class="text-center animate-title" style="margin-bottom: 70px;">
+      <h1 class="floating-title" style="
+        font-size: 3.5rem;
+        font-weight: 800;
+        color: var(--dark-green);
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+      ">
+        👥 تعرف على فريقنا
+      </h1>
+      <h2 style="
+        font-size: 1.7rem;
+        color: var(--clear-green);
+        font-weight: 500;
+        margin-bottom: 25px;
+        letter-spacing: 0.5px;
+      ">
+        Meet Our Team
+      </h2>
+      <div style="
+        width: 100px;
+        height: 5px;
+        background: linear-gradient(to right, var(--clear-green), var(--dark-green));
+        border-radius: 4px;
+        margin: auto;
+      "></div>
+    </div>
+
+    <!-- Bubble Cards -->
+    <div class="team-grid">
+
+      <!-- Member 1 -->
+      <a href="#" class="bubble-card" style="background: radial-gradient(circle at top, #c7f2d6, #98d5b9);">
+        <i class="fas fa-user-tie icon"></i>
+        <div class="name">أ. عبدالله عبد الرحمن مغربي</div>
+        <div class="role">General Manager</div>
+        <div class="desc">يقود عمليات الشركة ويضمن الجودة<br>Leads company operations and quality.</div>
+      </a>
+
+      <!-- Member 2 -->
+      <a href="#" class="bubble-card" style="background: radial-gradient(circle at top, #fde3cd, #f4b07d);">
+        <i class="fas fa-users icon"></i>
+        <div class="name">فريق الموارد البشرية</div>
+        <div class="role">HR Team</div>
+        <div class="desc">اختيار الكفاءات وتدريب مستمر<br>Selecting talent and training.</div>
+      </a>
+
+      <!-- Member 3 -->
+      <a href="#" class="bubble-card" style="background: radial-gradient(circle at center, #d9eaff, #9fb9e9);">
+        <i class="fas fa-chalkboard-teacher icon"></i>
+        <div class="name">فريق التدريب والتطوير</div>
+        <div class="role">Training Team</div>
+        <div class="desc">تدريب جميع أقسام الفندق<br>Training hotel departments.</div>
+      </a>
+
+      <!-- Member 4 -->
+      <a href="#" class="bubble-card" style="background: radial-gradient(circle at bottom, #fff2c9, #f7ce7d);">
+        <i class="fas fa-cogs icon"></i>
+        <div class="name">فريق العمليات</div>
+        <div class="role">Operations Team</div>
+        <div class="desc">تنظيم وتوزيع المهام بدقة<br>Task distribution and workflow.</div>
+      </a>
+
+    </div>
+
+    <!-- Back Button -->
+    <div style="text-align: center; margin-top: 80px;">
+      <a href="/ourteam/" class="custom-btn">
+        رجوع إلى الفريق | Back to Team
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* Button Styling */
+  .custom-btn {
+    background-color: var(--clear-green);
+    color: white;
+    padding: 14px 32px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 1rem;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+  }
+
+  .custom-btn:hover {
+    background-color: var(--dark-green);
+    transform: scale(1.07);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  }
+
+  .team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+  }
+
+  .bubble-card {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+  }
+
+  .bubble-card:hover {
+    transform: scale(1.08) rotate(1deg);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.25);
+  }
+
+  .bubble-card .icon {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 10px;
+  }
+
+  .bubble-card .name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .bubble-card .role {
+    font-size: 1rem;
+    color: white;
+    margin-bottom: 8px;
+  }
+
+  .bubble-card .desc {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  .floating-title {
+    animation: floatUp 2.5s ease-in-out;
+  }
+
+  @keyframes floatUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 768px) {
+    .bubble-card {
+      width: 240px;
+      height: 240px;
+      padding: 20px;
+    }
+    .bubble-card .name {
+      font-size: 1.1rem;
+    }
+    .bubble-card .desc {
+      font-size: 0.8rem;
+    }
+  }
+</style>
+
+<!-- FontAwesome CDN for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+{% endblock %}

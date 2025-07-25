@@ -1,0 +1,127 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% block title %}تم الإرسال | Message Sent{% endblock %}
+
+{% block content %}
+<!-- AOS Animation -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<div class="container" style="padding: 100px 20px;" data-aos="fade-up">
+  <!-- Main Message -->
+  <div style="text-align: center; margin-bottom: 40px;">
+    <h1 class="hover-grow" style="color: var(--dark-green); font-size: 2.5rem; font-weight: 900;">
+      ✅ تم إرسال رسالتك بنجاح
+    </h1>
+    <p style="font-size: 1.2rem; color: #444; margin-top: 15px;">
+      شكراً لتواصلك معنا، سنقوم بالرد عليك قريباً.
+    </p>
+  </div>
+
+  <!-- Flex Wrapper for Content + QR -->
+  <div class="thank-you-section" style="
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 60px;
+  ">
+
+    <!-- Message Box -->
+    <div class="gratitude-box" style="
+      flex: 1 1 500px;
+      background: #f9f9f9;
+      border-radius: 16px;
+      padding: 30px 25px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    " data-aos="fade-right">
+      <h3 style="color: var(--clear-green); font-size: 1.3rem; font-weight: 700;">💌 رسالة شكر | Thanks</h3>
+
+      <p class="rtl" style="margin: 10px 0; color: #555; font-size: 1.1rem;">
+        نود أن نعبر عن جزيل شكرنا لجميع عملائنا الكرام على ثقتهم في خدماتنا. نحن نقدر كل لحظة من التعاون معكم، ونتعهد بمواصلة تقديم أفضل مستوى من الخدمة لضمان رضاكم التام. نسعى دوماً للابتكار وتحقيق النجاح معاً.
+      </p>
+
+      <p class="ltr" style="color: #555; font-size: 1.1rem;">
+        We sincerely thank our valued clients for their trust. We deeply appreciate every moment of collaboration and promise to continue providing the highest level of service. We look forward to growing and succeeding together.
+      </p>
+    </div>
+
+    <!-- QR Box -->
+    <div style="
+      flex: 0 0 200px;
+      background: white;
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      text-align: center;
+    " data-aos="fade-left" data-aos-delay="150">
+      <img src="{% static 'pages/images/qr_license.png' %}"
+           alt="QR Code"
+           style="width: 160px; height: auto; mix-blend-mode: multiply; filter: brightness(110%) contrast(110%);">
+      <p style="margin-top: 12px; font-size: 1rem; color: #333;">
+        السجل التجاري: <strong>4030474104</strong>
+      </p>
+    </div>
+  </div>
+
+  <!-- Back Button -->
+  <div style="text-align: center;" data-aos="zoom-in">
+    <a href="{% url 'home' %}" class="animated-btn">
+      ⬅ العودة للرئيسية | Back to Homepage
+    </a>
+  </div>
+</div>
+
+<!-- Styles -->
+<style>
+  .hover-grow {
+    transition: transform 0.3s ease;
+  }
+
+  .hover-grow:hover {
+    transform: scale(1.05);
+    color: var(--clear-green);
+  }
+
+  .animated-btn {
+    background-color: var(--clear-green);
+    color: white;
+    padding: 14px 30px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+  }
+
+  .animated-btn:hover {
+    background-color: var(--dark-green);
+    transform: scale(1.07);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .rtl {
+    direction: rtl;
+    text-align: right;
+  }
+
+  .ltr {
+    direction: ltr;
+    text-align: left;
+  }
+
+  @media screen and (max-width: 768px) {
+    .thank-you-section {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+
+<!-- AOS Init -->
+<script>
+  AOS.init({ once: true });
+</script>
+{% endblock %}

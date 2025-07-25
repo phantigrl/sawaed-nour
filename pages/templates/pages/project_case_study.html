@@ -1,0 +1,85 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% block title %}سواعد SAWAEID | دراسة حالة لمشروع{% endblock %}
+
+{% block content %}
+<!-- AOS Library -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<!-- Hero Image with Gradient Fade -->
+<div style="position: relative;">
+  <img src="{% static 'pages/images/pstaff.jpg' %}" alt="Staff" style="width: 100%; height: auto; display: block; object-fit: cover;">
+  <div style="position: absolute; bottom: 0; width: 100%; height: 120px; background: linear-gradient(to top, #f9f8f5, rgba(249, 248, 245, 0));"></div>
+</div>
+
+<section style="background-color: #f9f8f5; padding: 100px 20px;">
+  <div class="container" style="max-width: 1100px; margin: auto;">
+    <div style="text-align: center; margin-bottom: 60px;" data-aos="fade-up">
+      <h1 style="color: var(--dark-green); font-size: 3rem; font-weight: 900;">دراسة حالة لمشروع</h1>
+      <h2 style="color: var(--clear-green); font-size: 1.8rem; font-weight: 600;">Project Case Study</h2>
+    </div>
+
+    <div class="case-box" style="background: white; border-radius: 16px; box-shadow: 0 8px 28px rgba(0,0,0,0.08); padding: 50px;" data-aos="fade-up" data-aos-delay="100">
+      <!-- Case Title -->
+      <h3 style="color: var(--dark-green); font-size: 1.7rem; font-weight: 800; margin-bottom: 20px;">🏨 مشروع | Hotel Labor Supply</h3>
+
+      <!-- Case Columns -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 40px;">
+        <div dir="rtl" style="line-height: 1.9; font-size: 1.1rem; color: #333;">
+          <p>
+            في هذه الدراسة، نعرض كيف ساعدنا في رفع كفاءة التشغيل لأحد الفنادق الراقية من خلال توفير عمالة مدربة ومؤهلة.
+          </p>
+          <p>
+            قمنا بزيادة مستوى رضا العملاء العام بنسبة <strong style="color: var(--clear-green);">30%</strong> وتحسين أداء خدمة الغرف بنسبة <strong style="color: var(--clear-green);">40%</strong>، مما أدى إلى تحسين كبير في جودة الخدمات.
+          </p>
+        </div>
+        <div style="line-height: 1.9; font-size: 1.1rem; color: #333;">
+          <p>
+            In this study, we show how we enhanced operational efficiency for a luxury hotel by supplying trained and qualified staff.
+          </p>
+          <p>
+            Guest satisfaction rose by <strong style="color: var(--clear-green);">30%</strong> and room service performance improved by <strong style="color: var(--clear-green);">40%</strong>, leading to notable service quality upgrades.
+          </p>
+        </div>
+      </div>
+
+      <hr style="margin: 30px 0; border: none; border-top: 2px solid var(--clear-green);" />
+
+      <!-- Strategy Title -->
+      <h3 style="color: var(--dark-green); font-size: 1.6rem; font-weight: 800; margin-bottom: 20px;">🚀 التحشيد والاستراتيجية | Mobilization & Strategy</h3>
+
+      <!-- Strategy Columns -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+        <div dir="rtl" style="font-size: 1.05rem; color: #3a3a3a; line-height: 1.9;">
+          <ul style="list-style: none; padding-right: 0;">
+            <li style="margin-bottom: 15px;">
+              👷‍♂️ <strong>التدريب المستمر:</strong> تأهيل العمالة على مدار العام لتحسين مهاراتهم وضمان تقديم أفضل خدمة.
+            </li>
+            <li>
+              💼 <strong>استخدام التكنولوجيا:</strong> استخدام أحدث الأنظمة لتوزيع وتنسيق المهام بين الموظفين لضمان سرعة وكفاءة تنفيذ المهام.
+            </li>
+          </ul>
+        </div>
+        <div style="font-size: 1.05rem; color: #3a3a3a; line-height: 1.9;">
+          <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 15px;">
+              👷‍♀️ <strong>Continuous Training:</strong> Continuous qualification of our workforce ensures excellent service delivery and skill growth year-round.
+            </li>
+            <li>
+              💡 <strong>Technology in Management:</strong> We use cutting-edge systems to manage, assign, and monitor tasks efficiently among our staff.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    AOS.init({ once: true });
+  });
+</script>
+{% endblock %}

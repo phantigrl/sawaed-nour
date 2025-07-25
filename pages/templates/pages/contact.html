@@ -1,0 +1,153 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% block title %}سواعد SAWAEID | تواصل معنا{% endblock %}
+
+{% block content %}
+
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<section class="contact-section" style="background-color: #f8f7f5; padding: 80px 20px;">
+  <div class="container" style="max-width: 800px; margin: auto;">
+    <form method="POST" action="{% url 'contact' %}" class="contact-form enhanced-form" data-aos="fade-up">
+      {% csrf_token %}
+
+      {% if form.errors %}
+        <div class="form-errors" style="background: #fdd; padding: 15px; border-radius: 10px; margin-bottom: 20px;">
+          <ul>
+            {% for field in form %}
+              {% for error in field.errors %}
+                <li>{{ field.label }}: {{ error }}</li>
+              {% endfor %}
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+      <h2 class="form-title">📨 تواصل معنا | Contact Us</h2>
+
+      <div class="form-group">
+        <label for="full_name">الاسم الكامل | Full Name *</label>
+        <input type="text" id="full_name" name="full_name" required placeholder="مثلاً: أحمد بن سالم">
+      </div>
+
+      <div class="form-group">
+        <label for="email">البريد الإلكتروني | Email Address *</label>
+        <input type="email" id="email" name="email" required placeholder="your@email.com">
+      </div>
+
+      <div class="form-group">
+        <label for="phone">رقم الهاتف | Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="مثلاً: +966 50 123 4567">
+      </div>
+
+      <div class="form-group">
+        <label for="company">اسم المؤسسة (اختياري) | Company Name (optional)</label>
+        <input type="text" id="company" name="company" placeholder="مثلاً: فندق المروج">
+      </div>
+
+      <div class="form-group">
+        <label for="service">نوع الخدمة المطلوبة | Type of Service</label>
+        <select id="service" name="service" required>
+          <option value="" disabled selected>-- اختر الخدمة --</option>
+          <option value="hotel_staffing">توفير عمالة فندقية</option>
+          <option value="training_programs">برامج تدريبية</option>
+          <option value="consulting">استشارات وحلول</option>
+          <option value="partnership">شراكة وتعاون</option>
+          <option value="other">أخرى</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">رسالتك | Message *</label>
+        <textarea id="message" name="message" rows="5" required placeholder="اكتب سؤالك أو طلبك هنا..."></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">📩 إرسال | Send Message</button>
+    </form>
+  </div>
+</section>
+
+<script>
+  AOS.init();
+</script>
+
+<style>
+  .enhanced-form {
+    background-color: #ffffff;
+    padding: 50px 40px;
+    border-radius: 14px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.07);
+  }
+
+  .form-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--dark-green);
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .form-group {
+    margin-bottom: 25px;
+  }
+
+  .form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--dark-green);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 10px;
+    border: 1.5px solid #ddd;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #fcfcfc;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--clear-green);
+    box-shadow: 0 0 0 3px rgba(138, 155, 110, 0.2);
+  }
+
+  .submit-btn {
+    width: 100%;
+    background-color: var(--clear-green);
+    color: white;
+    padding: 14px 28px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .submit-btn:hover {
+    background-color: var(--dark-green);
+    transform: scale(1.02);
+  }
+
+  @media (max-width: 600px) {
+    .enhanced-form {
+      padding: 35px 20px;
+    }
+
+    .form-title {
+      font-size: 1.6rem;
+    }
+  }
+</style>
+
+{% endblock %}

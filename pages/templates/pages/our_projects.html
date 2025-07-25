@@ -1,0 +1,133 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% block title %}سواعد SAWAEID | مشاريعنا{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/custom_page.css' %}">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+<section class="fade-in dreamy-vision" style="position: relative; z-index: 1;">
+  <div class="room-bg-animation dreamy-overlay" style="background-image: url('{% static 'pages/images/projects.jpg' %}');"></div>
+
+  <div class="container" style="max-width: 1140px; margin: auto; padding: 140px 20px 100px;">
+    <div class="title-row" data-aos="fade-down">
+      <h1 class="services-ar">مشاريعنا</h1>
+      <h1 class="services-en">Our Projects</h1>
+    </div>
+
+    <div class="vision-content">
+      <div class="card hover-card" data-aos="fade-up">
+        <h2>📌 نظرة عامة</h2>
+        <p class="rtl">قمنا بتنفيذ العديد من المشاريع الناجحة في مختلف الفنادق والمنشآت السياحية الحكومية.</p>
+        <p class="ltr">We have successfully implemented numerous projects across various hotels and government tourism establishments.</p>
+      </div>
+
+      <div class="card hover-card" data-aos="fade-up" data-aos-delay="100">
+        <h2>🤝 شركة مشارق - وزارة الحج& Mashariq Company</h2>
+        <p class="rtl"> توفير عمالة إضافية للعمل في الفنادق التي تستقبل الحجاج في مكة المكرمة والمدينة المنورة.</p>
+        <p class="ltr">Providing additional labor for hotels hosting pilgrims in Mecca and Medina.</p>
+        <div class="box-list rtl">
+          <h3>أرقام المكاتب:</h3>
+          <ul>
+            <li>١٤٣٥: مكتب ٥٤</li>
+            <li>١٤٣٦: مكتب ٥٤</li>
+            <li>١٤٣٧: مكتب ٩٤</li>
+            <li>١٤٣٨: مكتب ٩٤</li>
+            <li>١٤٣٩: مكتب ٩٤</li>
+            <li>١٤٤٣: مكتب ٩٤</li>
+            <li>١٤٤٤: مكتب ٥٠١</li>
+            <li>١٤٤٥: مكتب ٥٠١</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card hover-card" data-aos="fade-up" data-aos-delay="200">
+        <h2>🛎️ مشروع توريد العمالة الفندقية</h2>
+        <p class="rtl">ميدقت 50 موظفًا للعمل في أقسام مختلفة من خدمة الغرف إلى إدارة الاستقبال، لضمان سير العمليات بكفاءة وجودة عالية في جميع المجالات.</p>
+        <p class="ltr">Providing 50 employees to work across various departments, from room service to reception management, ensuring efficient operations and high-quality service delivery in all areas.</p>
+        <div style="margin-top: 20px; text-align: center;">
+          <img src="{% static 'pages/images/hotel_team.jpg' %}" alt="Hotel Team" style="max-width: 100%; border-radius: 16px; box-shadow: 0 12px 24px rgba(0,0,0,0.1);">
+        </div>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="button-container" style="text-align: center; margin-top: 80px;" data-aos="fade-up" data-aos-delay="300">
+      <a href="{% url 'project_case_study' %}" class="card-button primary" style="margin-right: 12px;">📄 دراسة حالة | Project Case Study</a>
+      <a href="{% url 'home' %}" class="card-button primary">⬅ العودة | Back to Homepage</a>
+    </div>
+  </div>
+  <!-- CONTACT US SECTION -->
+<div id="contact-us" class="fade-in" style="margin-top: 120px; padding: 80px 20px; background: linear-gradient(to right, #f0f7f3, #e4f2ec); border-radius: 20px; box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);">
+  <div class="container" style="max-width: 1000px; margin: auto; text-align: center;">
+
+    <h2 class="gradient-text" style="font-size: 2.5rem; font-weight: 800; margin-bottom: 20px;">
+      اتصل بنا | Contact Us
+    </h2>
+
+    <p style="font-size: 1.15rem; color: var(--text); max-width: 700px; margin: 0 auto 30px;">
+      هل لديك مشروع أو شراكة ترغب في مناقشتها؟ يسعدنا تواصلك معنا دائمًا.<br>
+      Have a project or partnership idea? We’d love to hear from you.
+    </p>
+
+    <a href="{% url 'contact' %}" class="card-button primary grow-hover" style="padding: 16px 36px; font-size: 1.15rem; border-radius: 12px;">
+      ✉️ ارسال رسالة | Send Message
+    </a>
+  </div>
+</div>
+
+</section>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
+
+<style>
+  .card {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 16px;
+    margin-bottom: 40px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+  }
+
+  .box-list ul li {
+    color: var(--grey);
+    font-weight: 500;
+    font-size: 1.2rem;
+  }
+
+  .box-list h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+
+  .card-button.primary {
+    background-color: var(--clear-green);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .card-button.primary:hover {
+    background-color: var(--dark-green);
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+  }
+</style>
+{% endblock %}

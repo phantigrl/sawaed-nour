@@ -1,0 +1,165 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% block title %}Home | سواعد SAWAEID{% endblock %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+<section class="hero" style="background: linear-gradient(rgba(26, 58, 46, 0.85), rgba(26, 58, 46, 0.85)), url('{% static "pages/images/hero-main.jpg" %}') center/cover no-repeat; padding: 120px 20px; text-align: center; position: relative; overflow: hidden;">
+  <div class="hero-animation" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none;">
+    <svg viewBox="0 0 1440 320" style="position: absolute; bottom: 0; left: 0; width: 100%; height: auto;"><path fill="var(--clear-green)" fill-opacity="0.3" d="M0,64L48,69.3C96,75,192,85,288,90.7C384,96,480,96,576,101.3C672,107,768,117,864,122.7C960,128,1056,128,1152,133.3C1248,139,1344,149,1392,154.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+  </div>
+  <div class="hero-content" style="position: relative; z-index: 2; color: white; max-width: 900px; margin: 0 auto; animation: fadeInUp 1s ease-in-out;">
+    <h1 style="font-size: 3.4rem; margin-bottom: 20px; line-height: 1.4;">
+      <span style="display: inline-block; animation: fadeIn 1.5s ease-in-out forwards;">أهلاً بكم في</span><br>
+      <span style="display: inline-block; animation: fadeIn 1.8s ease-in-out forwards;">Welcome to</span><br>
+      <span class="gradient-text" style="font-size: 3.6rem; animation: pulse 2s infinite alternate; letter-spacing: 1px;">SAWAEID</span>
+    </h1>
+    <p style="font-size: 1.4rem; line-height: 1.8; max-width: 700px; margin: 0 auto;">
+      تقديم خدمات ضيافة راقية بأيدٍ سعودية محترفة.<br>
+      Elevating Hospitality with Skilled Saudi Hands.
+    </p>
+    <div style="margin-top: 30px;">
+      <a href="#about" class="btn grow-hover">اكتشف المزيد | Discover More</a>
+    </div>
+    <div style="margin-top: 60px; display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+      <div style="background: rgba(255,255,255,0.1); padding: 20px 30px; border-radius: 15px; max-width: 250px; backdrop-filter: blur(8px);">
+        <i class="fas fa-users" style="font-size: 2.5rem;"></i>
+        <h4 style="margin-top: 10px; font-size: 1.2rem;">+500 موظف محترف</h4>
+      </div>
+      <div style="background: rgba(255,255,255,0.1); padding: 20px 30px; border-radius: 15px; max-width: 250px; backdrop-filter: blur(8px);">
+        <i class="fas fa-building" style="font-size: 2.5rem;"></i>
+        <h4 style="margin-top: 10px; font-size: 1.2rem;">+30 منشأة فندقية</h4>
+      </div>
+      <div style="background: rgba(255,255,255,0.1); padding: 20px 30px; border-radius: 15px; max-width: 250px; backdrop-filter: blur(8px);">
+        <i class="fas fa-award" style="font-size: 2.5rem;"></i>
+        <h4 style="margin-top: 10px; font-size: 1.2rem;">جودة معتمدة ومضمونة</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="services fade-in" style="padding: 100px 20px; background: linear-gradient(180deg, var(--light-grey) 0%, #f7f7f7 100%);">
+  <div class="container">
+    <h2 class="section-title gradient-text" style="text-align: center; font-size: 2.8rem; margin-bottom: 50px;">مقدمة<br><span style="font-size: 1.5rem; font-weight: normal;">Introduction</span></h2>
+    <div class="service-description" style="margin-bottom: 60px; display: flex; justify-content: center;">
+      <div class="hover-card" style="background-color: var(--white); padding: 40px; border-radius: 18px; box-shadow: 0 12px 35px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; max-width: 900px;">
+        <p style="margin-bottom: 20px; font-size: 1.2rem; line-height: 1.9;">
+          سواعد الضيافة شركة رائدة في مجال توريد العمالة المدربة في قطاع الخدمات الفندقية.<br>
+          متخصصون في تقديم عمالة عالية الجودة ومؤهلة لجميع الأقسام الفندقية، سواء كانت لفنادق صغيرة أو منشآت فاخرة.<br>
+          نقدم حلولاً مرنة للعمالة لتلبية احتياجات العملاء مع ضمان تقديم تجربة استثنائية للضيوف.
+        </p>
+        <p style="direction: ltr; text-align: left; font-size: 1.2rem; line-height: 1.9;">
+          SAWAEID is a leading company specializing in providing skilled labor in the hospitality sector.<br>
+          We are experts in supplying high-quality and well-trained staff for all hotel departments, whether for small hotels or luxurious establishments.<br>
+          We offer flexible staffing solutions tailored to meet our clients' needs while ensuring an exceptional guest experience.
+        </p>
+      </div>
+    </div>
+
+    <h2 class="section-title gradient-text" style="text-align: center; font-size: 2.8rem; margin-bottom: 50px;">مجلس الإدارة<br><span style="font-size: 1.5rem; font-weight: normal;">Board of Directors</span></h2>
+    <div class="features-grid" style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+      <div class="feature-box hover-card" style="background: linear-gradient(to bottom right, var(--beige), #fefefe); flex: 1 1 300px; max-width: 400px;">
+        <h3 class="feature-title"><i class="fas fa-user-tie"></i> أحمد منصور عبد الرحمن دمنهوري</h3>
+        <p class="feature-description">
+          رئيس مجلس الإدارة<br>
+          Chairman of the Board<br>
+          Mr. Ahmed Mansour Abdulrahman Damanhouri
+        </p>
+      </div>
+    </div>
+
+    <div class="cta-button" style="text-align: center; margin-top: 80px;">
+      <a href="/contact/" class="btn grow-hover">تواصل معنا | Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .btn {
+    padding: 14px 28px;
+    background-color: var(--clear-green);
+    color: white;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+
+  .grow-hover:hover {
+    background-color: var(--dark-green);
+    transform: scale(1.08);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+  }
+
+  .hover-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.15);
+  }
+
+  .gradient-text {
+    background: linear-gradient(to right, var(--clear-green), var(--dark-green));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .feature-box {
+    border-radius: 20px;
+    padding: 35px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .feature-title {
+    font-size: 1.5rem;
+    color: var(--dark-green);
+    margin-bottom: 15px;
+  }
+
+  .feature-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #444;
+  }
+
+  @keyframes pulse {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+
+<!-- FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+{% endblock %}
